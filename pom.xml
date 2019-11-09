@@ -14,6 +14,7 @@
         <module>microcloud-api</module>
         <module>microcloud-provider-product</module>
         <module>microcloud-consumer</module>
+        <module>microcloud-security</module>
     </modules>
 
     <properties>
@@ -48,10 +49,17 @@
                 <version>1.3.0</version>
             </dependency>
             <dependency>
-                <groupId>enjoy</groupId>
+                <groupId>com.shuiyujie</groupId>
                 <artifactId>microcloud-api</artifactId>
-                <version>1.0.0</version>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>com.shuiyujie</groupId>
+                <artifactId>microcloud-security</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

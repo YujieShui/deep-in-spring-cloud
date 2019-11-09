@@ -50,6 +50,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+
+        <!-- 使用自定义的安全模块 -->
+        <dependency>
+            <groupId>com.shuiyujie</groupId>
+            <artifactId>microcloud-security</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
