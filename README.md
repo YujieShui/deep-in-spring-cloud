@@ -170,6 +170,27 @@ eureka:
       defaultZone: http://admin:enjoy@localhost:7001/eureka
 ```
 
-【microcloud-eureka】新增配置类EurekaSecurityConfig，重写configure方法，把csrf劫持关闭
+【microcloud-eureka】新增配置类 [EurekaSecurityConfig](./microcloud-eureka/src/main/java/com/shuiyujie/config/EurekaSecurityConfig.java)，重写configure方法，把csrf劫持关闭
+
+## HA 高可用
+
+起 3 个eureka ，每个eureka都需要配置hostname,所有先修改hosts文件内容如下
+```shell script
+127.0.0.1 eureka1
+127.0.0.1 eureka2
+127.0.0.1 eureka3
+```
+
+application.yml 文件修改 port、defaultZone、hostname。再拷贝出两个 Eureka 项目。
+
+Provider 配置多台 Eureka 注册
+
+```yaml
+defaultZone: http://admin:admin@eureka1:7001/eureka, http://admin:admin@eureka2:7002/eureka, http://admin:admin@eureka3:7003/eureka
+```
+
+
+
+
 
 
