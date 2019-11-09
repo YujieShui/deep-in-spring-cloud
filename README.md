@@ -189,6 +189,32 @@ Provider 配置多台 Eureka 注册
 defaultZone: http://admin:admin@eureka1:7001/eureka, http://admin:admin@eureka2:7002/eureka, http://admin:admin@eureka3:7003/eureka
 ```
 
+## 打包发布
+
+在真实项目中，需要讲Eureka发布到具体服务器上进行执行，打包部署其实和springboot里面讲的大同小异
+
+和properties文件稍微有点不同，对于properties文件，不同的环境会有不同的配置文件比如application-dev.properties，application-test.properties,application-pro.properties等
+但如果是yml文件，所有的的配置都再同一个yml文件中
+
+三个 Eureka 的 application.yml 分别加上各自的：
+
+```yaml
+spring:
+  profiles: dev-7001
+```
+
+【microcloud-eureka】添加一个打包插件，修改pom文件
+
+【microcloud-eureka】 在pom文件所在目录 ` mvn clean install package`
+
+在 /microcloud-eureka/target 下生成 jar 包 `eureka-server.jar`
+
+采用默认的方式执行 eureka-server.jar
+那么此时将运行在 7001 端口上：java -jar eureka-server.jar
+ 运行其它的两个 profile 配置：
+· 运行“dev-7002”profile：java -jar eureka-server.jar --spring.profiles.active=dev-7002；
+· 运行“dev-7003”profile：java -jar eureka-server.jar --spring.profiles.active=dev-7003
+
 
 
 
