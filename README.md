@@ -138,3 +138,38 @@ public class ProductController {
     }
 }
 ```
+
+## 安全机制
+
+一般情况下Eureka 和服务的提供注册者都会在一个内网环境中，但免不了在某些项目中需要让其他外网的服务注册到Eureka，这个时候就有必要让Eureka增加一套安全认证机制了，让所有服务提供者通过安全认证后才能注册进来
+
+```xml
+<!-- 引入SpringSecurity的依赖包，作为 Eureka 的安全机制-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+```
+
+【microcloud-eureka】修改 application.yml文件，增加用户、密码验证
+
+```yaml
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+```
+
+【microcloud-provider-product】修改application.yml文件，增加验证信息，用 curl 的形式访问
+
+```yaml
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://admin:enjoy@localhost:7001/eureka
+```
+
+【microcloud-eureka】新增配置类EurekaSecurityConfig，重写configure方法，把csrf劫持关闭
+
+
