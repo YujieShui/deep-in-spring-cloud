@@ -15,6 +15,7 @@
         <module>microcloud-provider-product</module>
         <module>microcloud-consumer</module>
         <module>microcloud-security</module>
+        <module>microcloud-eureka</module>
     </modules>
 
     <properties>
@@ -66,7 +67,23 @@
 
     <build>
         <finalName>microcloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
