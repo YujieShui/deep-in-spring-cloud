@@ -14,7 +14,6 @@ eureka:
     hostname: eureka3 # 定义 Eureka 实例所在的主机名称
 
 spring:
-  profiles: dev-7003
   security:
     user:
       name: admin
