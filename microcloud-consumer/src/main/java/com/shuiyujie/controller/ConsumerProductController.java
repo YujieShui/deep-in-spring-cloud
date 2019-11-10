@@ -21,9 +21,9 @@ import java.util.List;
 @RequestMapping("/consumer")
 public class ConsumerProductController {
 
-    public static final String PRODUCT_GET_URL = "http://MICROCLOUD-PROVIDER-PRODUCT/prodcut/get/";
-    public static final String PRODUCT_LIST_URL="http://MICROCLOUD-PROVIDER-PRODUCT/prodcut/list/";
-    public static final String PRODUCT_ADD_URL = "http://MICROCLOUD-PROVIDER-PRODUCT/prodcut/add/";
+    public static final String PRODUCT_GET_URL = "http://MICROCLOUD-PROVIDER-PRODUCT/product/get/";
+    public static final String PRODUCT_LIST_URL="http://MICROCLOUD-PROVIDER-PRODUCT/product/list/";
+    public static final String PRODUCT_ADD_URL = "http://MICROCLOUD-PROVIDER-PRODUCT/product/add/";
 
     @Resource
     private RestTemplate restTemplate;

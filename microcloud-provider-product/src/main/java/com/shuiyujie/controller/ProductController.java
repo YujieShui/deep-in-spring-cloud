@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * @create 2019-11-09
  **/
 @RestController
-@RequestMapping("/prodcut")
+@RequestMapping("/product")
 public class ProductController {
 
     @Resource
