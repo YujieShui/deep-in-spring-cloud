@@ -34,6 +34,10 @@ Provider 可以通过 Eureka 进行注册，Consumer 可以使用 Ribbon 连上 
 
 有时候，某个消费者可能需要访问多个多个服务提供方，而希望每个服务提供方提供的路由规则并不相同，这个时候就不能让Spring扫描到IRULE，需要通过@RibbonClient 来指定服务于配置的关系
 
+## 脱离 Eureka 使用 Ribbon
+
+之前所用Ribbon都是从Eureka中获取服务并通过@LoadBalanced来实现负载均衡的，其实Ribbon也可以脱离Eureka来使用
+
 
 
 
