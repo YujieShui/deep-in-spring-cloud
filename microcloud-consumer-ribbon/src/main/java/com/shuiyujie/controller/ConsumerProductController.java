@@ -48,7 +48,7 @@ public class ConsumerProductController {
                         + "、port = " + serviceInstance.getPort()
                         + "、serviceId = " + serviceInstance.getServiceId());
 
-        URI uri = URI.create(String.format("http://%s:%s/prodcut/list/" ,
+        URI uri = URI.create(String.format("http://%s:%s/product/list/" ,
                 serviceInstance.getHost(), serviceInstance.getPort()));
 
         List<Product> list = restTemplate.exchange(uri,HttpMethod.GET,new HttpEntity<Object>(httpHeaders), List.class).getBody();
