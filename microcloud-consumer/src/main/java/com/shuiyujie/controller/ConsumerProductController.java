@@ -1,6 +1,8 @@
 package com.shuiyujie.controller;
 
 import com.shuiyujie.vo.Product;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -29,6 +31,12 @@ public class ConsumerProductController {
     @Resource
     private HttpHeaders httpHeaders;
 
+    /**
+     * 在服务的消费方，也是可以获取到服务提供方的具体信息
+     */
+    @Resource
+    private LoadBalancerClient loadBalancerClient;
+
     @RequestMapping("/product/get")
     public Object getProduct(long id) {
         Product product = restTemplate.exchange(PRODUCT_GET_URL + id,HttpMethod.GET,new HttpEntity<Object>(httpHeaders), Product.class).getBody();
@@ -37,6 +45,14 @@ public class ConsumerProductController {
 
     @RequestMapping("/product/list")
     public  Object listProduct() {
+
+        // 在服务的消费方，也是可以获取到服务提供方的具体信息
+        ServiceInstance serviceInstance = this.loadBalancerClient.choose("MICROCLOUD-PROVIDER-PRODUCT") ;
+        System.out.println(
+                "【*** ServiceInstance ***】host = " + serviceInstance.getHost()
+                        + "、port = " + serviceInstance.getPort()
+                        + "、serviceId = " + serviceInstance.getServiceId());
+
         List<Product> list = restTemplate.exchange(PRODUCT_LIST_URL, HttpMethod.GET,new HttpEntity<Object>(httpHeaders), List.class).getBody();
         return  list;
     }

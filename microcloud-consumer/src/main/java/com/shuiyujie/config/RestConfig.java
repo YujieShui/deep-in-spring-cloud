@@ -38,14 +38,14 @@ public class RestConfig {
     }
 
     /**
-     * 更改负载均衡策略，默认轮询改为随机
-     *
+     * 更改负载均衡策略，默认轮询改为随机(全局)
+     * 单独配置 Ribbon 路由用 RibbonConfig
      * @return
      */
-    @Bean
-    public IRule ribbonRule() { // 其中IRule就是所有规则的标准
-        return new com.netflix.loadbalancer.RandomRule(); // 随机的访问策略
-    }
+//    @Bean
+//    public IRule ribbonRule() { // 其中IRule就是所有规则的标准
+//        return new com.netflix.loadbalancer.RandomRule(); // 随机的访问策略
+//    }
 
 
 }
