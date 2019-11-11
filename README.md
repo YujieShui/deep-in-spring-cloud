@@ -1,18 +1,13 @@
-# feign 接口服务
+# Hystrix 熔断机制
 
-这篇写的挺好 [跟我学Spring Cloud（Finchley版）-09-Feign](http://www.itmuch.com/spring-cloud/finchley-9/)
+ 在分布式环境下，微服务之间不可避免的发生互相调用的情况，但是没有一个系统是能保证自身绝对正确的，在服务的调用过程中，很可能面临服务失败的问题，因此需要一个公共组件能够在服务通过网络请求访问其他微服务时，能对服务失效情况下有很强的容错能力，对微服务提供保护和监控。
+ 
+ Hystrix是netflix的一个开源项目，他能够在依赖服务失效的情况下，通过隔离系统依赖的方式，防止服务的级联失败（服务的雪崩）
+ 
+ 对于服务的熔断机制，其实需要考虑两种情况
+ 1.	服务提供方存活，但调用接口报错
+ 2.	服务提供方本身就出问题了
 
-前面已经学习了Ribbon,从Eureka获取服务的实例在通过RestTemplate调用，并转换成需要的对象
-
-```java
-List<Product> list = restTemplate.exchange(PRODUCT_LIST_URL,HttpMethod.GET,new HttpEntity<Object>(httpHeaders), List.class).getBody();
-```
-
-可以发现所有的数据调用和转换都是由用户直接来完成的，我们可能不想直接访问Rest接口，如果转换回来的直接是对象而不需要直接使用RestTemplate进行转换就好了，这个时候就需要使用**Feign**了
-
-## microcloud-service
-
-【microcloud-service】，新建立一个microcloud-service模块，这个模块专门定义客户端的调用接口
-
-【microcloud-service】如果要通过Feign进行远程调用，依然需要安全服务提供方的认证问题，不过在feign里面已经集成了这块功能
+- 服务降级：降级指的是当服务提供方不可用的时候，调用服务提供方的备用服务
+- 服务熔断：熔断指的是当服务的提供方不可使用的时候，程序不会出现异常，而会出现本地的操作调用，服务的熔断是在服务消费方实现的，在断网情况下服务提供方的任何处理都是没有意义的。
 
