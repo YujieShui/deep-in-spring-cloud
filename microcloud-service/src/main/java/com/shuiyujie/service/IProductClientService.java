@@ -1,6 +1,7 @@
 package com.shuiyujie.service;
 
 import com.shuiyujie.config.FeignClientConfig;
+import com.shuiyujie.fallback.IProductClientServiceFallbackFactory;
 import com.shuiyujie.vo.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,9 @@ import java.util.List;
  * @author shui
  * @create 2019-11-10
  **/
-@FeignClient(name = "MICROCLOUD-PROVIDER-PRODUCT",url = "http://localhost:8080",configuration = FeignClientConfig.class)
+@FeignClient(name = "MICROCLOUD-PROVIDER-PRODUCT",url = "http://localhost:8080",
+        configuration = FeignClientConfig.class,
+        fallbackFactory = IProductClientServiceFallbackFactory.class)
 public interface IProductClientService {
 
     @RequestMapping("/product/get/{id}")
