@@ -1,0 +1,22 @@
+server:
+  port: 9001
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin@eureka1:7001/eureka,http://admin:admin@eureka2:7002/eureka,http://admin:admin@eureka3:7003/eureka
+
+feign:
+  compression:
+    request:
+      enabled: true
+      mime-types: # 可以被压缩的类型
+        - text/xml
+        - application/xml
+        - application/json
+      min-request-size: 2048 # 超过2048的字节进行压缩
+
+logging:
+  level:
+    com.shuiyujie.service: DEBUG
