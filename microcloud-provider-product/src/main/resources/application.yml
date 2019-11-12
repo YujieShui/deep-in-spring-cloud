@@ -18,6 +18,7 @@ logging:
     com.shuiyujie.mapper: debug
 
 eureka:
+  register-with-eureka: true
   client: # 客户端进行Eureka注册的配置
     service-url:
 #      defaultZone: http://admin:admin@localhost:7001/eureka

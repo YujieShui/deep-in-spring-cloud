@@ -15,7 +15,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @MapperScan("com.shuiyujie.mapper")
 @EnableEurekaClient
 @EnableDiscoveryClient
-@EnableCircuitBreaker
 public class ProductApp {
     public static void main(String[] args) {
         SpringApplication.run(ProductApp.class, args);
