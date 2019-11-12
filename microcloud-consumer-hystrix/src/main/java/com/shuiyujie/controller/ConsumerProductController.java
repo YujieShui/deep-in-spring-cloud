@@ -3,10 +3,10 @@ package com.shuiyujie.controller;
 import com.shuiyujie.service.IProductClientService;
 import com.shuiyujie.vo.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,8 +20,8 @@ public class ConsumerProductController {
     @Autowired
     private IProductClientService iProductClientService;
 
-    @RequestMapping("/product/get/{id}")
-    public Product getProduct(long id) {
+    @RequestMapping(value="/product/get/{id}")
+    public Product getProduct(@PathVariable("id") long id) {
         return  iProductClientService.getProduct(id);
     }
 

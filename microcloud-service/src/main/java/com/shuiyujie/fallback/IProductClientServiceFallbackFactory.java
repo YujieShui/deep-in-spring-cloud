@@ -3,6 +3,7 @@ package com.shuiyujie.fallback;
 import com.shuiyujie.service.IProductClientService;
 import com.shuiyujie.vo.Product;
 import feign.hystrix.FallbackFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @author shui
  * @create 2019-11-11
  **/
+@Component
 public class IProductClientServiceFallbackFactory implements FallbackFactory<IProductClientService> {
     @Override
     public IProductClientService create(Throwable throwable) {

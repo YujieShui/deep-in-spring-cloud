@@ -10,7 +10,7 @@ eureka:
 feign:
   # 开启服务熔断
   hystrix:
-    enabled: true
+    enabled: false
   compression:
     request:
       enabled: true

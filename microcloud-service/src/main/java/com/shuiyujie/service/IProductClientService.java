@@ -13,7 +13,7 @@ import java.util.List;
  * @author shui
  * @create 2019-11-10
  **/
-@FeignClient(name = "MICROCLOUD-PROVIDER-PRODUCT",url = "http://localhost:8080",
+@FeignClient(name = "MICROCLOUD-PROVIDER-PRODUCT",url = "http://localhost:8082",
         configuration = FeignClientConfig.class,
         fallbackFactory = IProductClientServiceFallbackFactory.class)
 public interface IProductClientService {
