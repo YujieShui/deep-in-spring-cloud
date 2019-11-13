@@ -24,6 +24,7 @@
         <module>microcloud-eureka</module>
         <module>microcloud-eureka2</module>
         <module>microcloud-eureka3</module>
+        <module>microcloud-zuul-gateway</module>
     </modules>
 
     <properties>
