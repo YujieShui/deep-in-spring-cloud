@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-security/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-eureka2/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-eureka3/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-provider-product2/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-provider-product3/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-consumer-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-consumer-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-provider-product-hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-consumer-hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-service/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-consumer-hystrixdashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/microcloud-zuul-gateway/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/microcloud-ribbon/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+</project>

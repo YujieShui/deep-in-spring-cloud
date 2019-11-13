@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microcloud-provider-product-hystrix" />
+        <module name="microcloud-provider-product3" />
+        <module name="microcloud-consumer-hystrixdashboard" />
+        <module name="microcloud-consumer-hystrix" />
+        <module name="microcloud-provider-product" />
+        <module name="microcloud-consumer-feign" />
+        <module name="microcloud-api" />
+        <module name="microcloud-provider-product2" />
+        <module name="microcloud-zuul-gateway" />
+        <module name="microcloud-security" />
+        <module name="microcloud-consumer-ribbon" />
+        <module name="microcloud-service" />
+        <module name="microcloud-consumer" />
+        <module name="microcloud-eureka3" />
+        <module name="microcloud-eureka2" />
+        <module name="microcloud-eureka" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microcloud" target="1.8" />
+      <module name="microcloud-api" target="1.8" />
+      <module name="microcloud-consumer" target="1.8" />
+      <module name="microcloud-consumer-feign" target="1.8" />
+      <module name="microcloud-consumer-hystrix" target="1.8" />
+      <module name="microcloud-consumer-hystrixdashboard" target="1.8" />
+      <module name="microcloud-consumer-ribbon" target="1.8" />
+      <module name="microcloud-eureka" target="1.8" />
+      <module name="microcloud-eureka (1)" target="1.8" />
+      <module name="microcloud-eureka2" target="1.8" />
+      <module name="microcloud-eureka3" target="1.8" />
+      <module name="microcloud-provider-product" target="1.8" />
+      <module name="microcloud-provider-product-hystrix" target="1.8" />
+      <module name="microcloud-provider-product2" target="1.8" />
+      <module name="microcloud-provider-product3" target="1.8" />
+      <module name="microcloud-ribbon" target="1.8" />
+      <module name="microcloud-security" target="1.8" />
+      <module name="microcloud-service" target="1.8" />
+      <module name="microcloud-zuul-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

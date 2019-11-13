@@ -1,0 +1,5 @@
+com/shuiyujie/ProductApp.class
+com/shuiyujie/mapper/ProductMapper.class
+com/shuiyujie/controller/ProductController.class
+com/shuiyujie/service/impl/ProductServiceImpl.class
+com/shuiyujie/service/IProductService.class
